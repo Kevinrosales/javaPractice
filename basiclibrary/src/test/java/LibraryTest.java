@@ -5,8 +5,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+//    @Test public void testSomeLibraryMethod() {
+//        Library classUnderTest = new Library();
+//        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+//    }
+    @Test public void testingDups() {
+        int[] rolls = {1, 3, 5};
+        assertFalse("array should contain no duplicates", Library.containsDuplicates(rolls));
     }
+
+
 }
