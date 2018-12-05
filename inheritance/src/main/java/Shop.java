@@ -1,4 +1,4 @@
-public class Shop {
+public class Shop extends Review{
 
     public String name;
     public String description;
