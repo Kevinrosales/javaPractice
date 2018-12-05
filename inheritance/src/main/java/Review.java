@@ -14,4 +14,8 @@ public class Review {
     }
     //default constructor!!
     public Review(){}
+
+    public void addReview(String body, String author, int stars){
+
+    }
 }
