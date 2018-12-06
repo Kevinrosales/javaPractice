@@ -20,12 +20,42 @@ public class bitmap {
         }
     }
 
+    public void mirrorBot(){
+        for(int i = 0; i < this.imageData.getHeight(); i++){
+            for(int j = 0; j < this.imageData.getWidth() / 2; j++){
+                int temp = this.imageData.getRGB(i, this.imageData.getWidth()-1-j);
+                this.imageData.setRGB(i,this.imageData.getWidth()-1, this.imageData.getRGB(i,j));
+                this.imageData.setRGB(i, j, temp);
+            }
+        }
+    }
+
     public void flipVertically() {
         for (int i = 0;i < this.imageData.getHeight();i++) {
             for (int j = 0; j < this.imageData.getWidth() / 2;j++){
                 int temp = this.imageData.getRGB(i,j);
                 this.imageData.setRGB(i,j, this.imageData.getRGB(i, this.imageData.getWidth() -j -1));
                 this.imageData.setRGB(i, this.imageData.getWidth() -j -1, temp);
+            }
+        }
+    }
+
+    public void flipHorizontally(){
+        for(int i = 0; i < this.imageData.getHeight(); i++){
+            for(int j = 0; j < this.imageData.getWidth() / 2; j++){
+                int temp = this.imageData.getRGB(this.imageData.getWidth()-1-j, i);
+                this.imageData.setRGB(this.imageData.getWidth()-1-j, i, this.imageData.getRGB(j,i));
+                this.imageData.setRGB(j, i, temp);
+            }
+        }
+    }
+
+    public void mirrorRight(){
+        for(int i = 0; i < this.imageData.getHeight(); i++){
+            for(int j = 0; j < this.imageData.getWidth() / 2; j++){
+                int tempVal = this.imageData.getRGB(this.imageData.getWidth()-1-j, i);
+                this.imageData.setRGB(this.imageData.getWidth()-1, i, this.imageData.getRGB(i,j));
+                this.imageData.setRGB(j, i, tempVal);
             }
         }
     }
