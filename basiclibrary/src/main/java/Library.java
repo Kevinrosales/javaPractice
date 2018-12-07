@@ -1,7 +1,7 @@
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
-
+import java.util.HashMap;
+import java.util.List;
 
 public class Library {
 
@@ -67,4 +67,25 @@ public class Library {
 
         }
     }
+
+    public static String tally(List<String> votes) {
+        HashMap<String, Integer> track = new HashMap<>();
+            for (String vote : votes) {
+                if (track.containsKey(vote)) {
+                    track.put(vote, track.get(vote) + 1);
+                }else {
+                    track.put(vote, 1);
+                }
+            }
+            int winning = 0;
+            String most = "";
+                for (String temp : track.keySet()) {
+                    if (track.get(temp) > winning) {
+                    winning = track.get(temp);
+                    most = temp;
+                    }
+                }
+                return most + " received the most votes!";
+    }
+
 }
