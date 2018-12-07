@@ -1,6 +1,10 @@
 import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.Random;
 import static org.junit.Assert.*;
+import java.util.List;
+
 
 public class LibraryTest {
 
@@ -22,5 +26,18 @@ public class LibraryTest {
 
         int[] moreNumbers = {4, 4, 4, 4};
         assertEquals("Should return the average of all values in the array", 4, Library.average(moreNumbers), 0.001);
+    }
+    @Test public void testTally() {
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+        assertEquals("Bush received the most votes!", Library.tally(votes));
     }
 }
