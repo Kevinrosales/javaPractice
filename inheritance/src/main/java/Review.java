@@ -1,21 +1,21 @@
 public class Review {
-    public String body;
+    public String comment;
     public String author;
-    public int stars;
+    public int numStars;
 
-    public Review(String body, String author, int stars) {
-        this.body =  body;
-        this.author =  author;
-        this.stars =  stars;
+
+    public Review (String comment, String author, int numStars){
+        this.comment = comment;
+        this.author = author;
+        this.numStars = numStars;
     }
 
+    public Review() {
+    }
+
+    @Override
     public String toString() {
-        return this.body + "," + " written by: " + this.author + ", stars: " + this.stars;
+        return this.author + this.comment + this.numStars;
+
     }
-    //default constructor!!
-    public Review(){}
-
-//    public void addReview(String body, String author, int stars){
-
-//    }
 }

@@ -4,14 +4,14 @@ import static org.junit.Assert.*;
 
 public class RestaurantTest {
 
-    @Test
-    public void testToString(){
-        Restaurant zolas = new Restaurant("zolas", "$$", 3);
-        String stringifiedZolas = zolas.toString();
-        assertEquals("Name of the Restaurant: zolas, rating: 3, on a scale of 1-5 the price is: $$", stringifiedZolas);
-    }
-    @Test
-    public void testAddReview() {
+    @Test public void testAddMethod() {
+        Restaurant place = new Restaurant("testing test", 2, "$");
+
+        Review kevin = new Review("its Kevin", "kevin", 5);
+        String message = "testing test3.5$";
+        place.addReview(kevin);
+
+        assertEquals(message, place.toString());
 
     }
 }

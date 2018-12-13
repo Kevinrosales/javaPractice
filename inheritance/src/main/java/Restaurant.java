@@ -1,23 +1,35 @@
-import java.util.LinkedList;
-import java.util.List;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class Restaurant extends Review{
     public String name;
-    public int rating;
-    public String price;
+    public float numStars;
+    public String price; //i.e. number of dollar signs).
 
-
-
-    public Restaurant(String name, String price, int rating) {
-        this.name =  name;
-        this.rating =  rating;
+    public Restaurant(String name, int numStars, String price) {
+        this.name = name;
+        this.numStars = numStars;
         this.price = price;
+
     }
 
+    @Override
     public String toString() {
-        return "Name of the Restaurant: " + this.name + ", " + "rating: " + this.rating + ", on a scale of 1-5 the price is: " + this.price;
+        DecimalFormat K = new DecimalFormat("##.0");
+        return this.name + K.format(this.numStars) + this.price;
     }
 
-//    public addReview(Review){}
+    public void addReview(Review review) {
+        ArrayList<Integer> starArray = new ArrayList<>();
+        starArray.add(review.numStars);
+        if(this.numStars<0){
+            float sum =this.numStars +review.numStars;
+            this.numStars = sum/starArray.size();
+        }else{
+            float sum =this.numStars +review.numStars;
+            this.numStars = sum/(starArray.size()+1);
+        }
+
+    }
 
 }
